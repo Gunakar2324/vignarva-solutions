@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism Light Tokens */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.08);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .glass-card-hover:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15);
+    transform: translateY(-4px);
+  }
+
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  }
+
+  .glass-pill {
+    background: rgba(239, 246, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(191, 219, 254, 0.7);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #1E40AF 0%, #2563EB 50%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-mesh-pattern {
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.6) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(207, 250, 254, 0.5) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(239, 246, 255, 0.8) 0px, transparent 50%);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
