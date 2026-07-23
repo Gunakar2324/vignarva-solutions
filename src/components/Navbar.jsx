@@ -55,23 +55,17 @@ const Navbar = ({ onOpenConsultation }) => {
         <div className="flex items-center justify-between">
           
           {/* Official Brand Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
-            {/* <img 
-              // src="/logo-mark.png" 
+          <a href="#home" className="flex items-center gap-3 sm:gap-3.5 group">
+            <img
               src="logo-dark-bg.png"
-              alt="Vignarva Solutions Logo" 
-              className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            /> */}
-                          <img
-                src="logo-dark-bg.png"
-                alt="Vignarva Solutions Logo"
-                className="h-10 sm:h-11 w-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
-              />
+              alt="Vignarva Solutions Logo"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain rounded-2xl transition-transform duration-300 group-hover:scale-105"
+            />
             <div className="flex flex-col">
-              <span className="text-xl font-extrabold tracking-tight text-slate-900 flex items-center gap-1">
+              <span className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight text-slate-900 flex items-center gap-1">
                 Vignarva <span className="text-brand-600">Solutions</span>
               </span>
-              <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">
+              <span className="text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-widest">
                 Innovating Business Through Technology
               </span>
             </div>

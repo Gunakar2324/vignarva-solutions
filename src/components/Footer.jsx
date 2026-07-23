@@ -20,17 +20,17 @@ const Footer = () => {
           
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3.5">
               <img 
-                src="/logo-mark.png" 
-                alt="Vignarva Solutions Logo Mark" 
-                className="h-11 w-auto object-contain bg-white/10 p-1.5 rounded-xl backdrop-blur-md"
+                src="logo-dark-bg.png" 
+                alt="Vignarva Solutions Logo" 
+                className="h-14 sm:h-16 md:h-20 w-auto object-contain rounded-xl shadow-lg border border-slate-800"
               />
               <div className="flex flex-col">
-                <span className="text-xl font-extrabold tracking-tight text-white">
+                <span className="text-2xl sm:text-3xl font-black tracking-tight text-white">
                   Vignarva <span className="text-brand-400">Solutions</span>
                 </span>
-                <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
                   Innovating Business Through Technology
                 </span>
               </div>
