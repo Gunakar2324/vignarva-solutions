@@ -4,12 +4,8 @@ import Hero from './components/Hero';
 import About from './components/About';
 import OracleSolutionsExplorer from './components/OracleSolutionsExplorer';
 import Services from './components/Services';
-import Technologies from './components/Technologies';
 import Industries from './components/Industries';
 import WhyChooseUs from './components/WhyChooseUs';
-import Achievements from './components/Achievements';
-import Testimonials from './components/Testimonials';
-import Careers from './components/Careers';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ConsultationModal from './components/ConsultationModal';
@@ -37,12 +33,8 @@ function App() {
         <About />
         <OracleSolutionsExplorer onOpenConsultation={handleOpenConsultation} />
         <Services onOpenConsultation={handleOpenConsultation} />
-        <Technologies />
         <Industries />
         <WhyChooseUs />
-        <Achievements />
-        <Testimonials />
-        <Careers />
         <Contact />
       </main>
 

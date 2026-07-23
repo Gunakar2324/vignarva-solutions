@@ -16,7 +16,7 @@ const Navbar = ({ onOpenConsultation }) => {
       }
 
       // Track active section for highlight
-      const sections = ['home', 'about', 'oracle-solutions', 'services', 'technologies', 'industries', 'why-us', 'careers', 'contact'];
+      const sections = ['home', 'about', 'oracle-solutions', 'services', 'industries', 'why-us', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -41,9 +41,7 @@ const Navbar = ({ onOpenConsultation }) => {
     { name: 'About', href: '#about', id: 'about' },
     { name: 'Oracle IT', href: '#oracle-solutions', id: 'oracle-solutions', badge: 'Specialist' },
     { name: 'Services', href: '#services', id: 'services' },
-    { name: 'Technologies', href: '#technologies', id: 'technologies' },
     { name: 'Industries', href: '#industries', id: 'industries' },
-    { name: 'Careers', href: '#careers', id: 'careers' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 

@@ -65,9 +65,8 @@ const Footer = () => {
               <li><a href="#home" className="hover:text-brand-400 transition-colors">Home</a></li>
               <li><a href="#about" className="hover:text-brand-400 transition-colors">About Us</a></li>
               <li><a href="#oracle-solutions" className="hover:text-brand-400 transition-colors">Oracle Solutions</a></li>
-              <li><a href="#technologies" className="hover:text-brand-400 transition-colors">Technologies</a></li>
+              <li><a href="#services" className="hover:text-brand-400 transition-colors">Services</a></li>
               <li><a href="#industries" className="hover:text-brand-400 transition-colors">Industries</a></li>
-              <li><a href="#careers" className="hover:text-brand-400 transition-colors">Careers</a></li>
               <li><a href="#contact" className="hover:text-brand-400 transition-colors">Contact</a></li>
             </ul>
           </div>
@@ -78,24 +77,24 @@ const Footer = () => {
               Services
             </h4>
             <ul className="space-y-2.5 text-xs">
+              <li><a href="#services" className="hover:text-brand-400 transition-colors">Oracle Fusion Modules</a></li>
+              <li><a href="#services" className="hover:text-brand-400 transition-colors">Oracle APEX Development</a></li>
               <li><a href="#oracle-solutions" className="hover:text-brand-400 transition-colors">Oracle ERP Cloud</a></li>
               <li><a href="#services" className="hover:text-brand-400 transition-colors">Enterprise Software</a></li>
               <li><a href="#services" className="hover:text-brand-400 transition-colors">Web Development</a></li>
-              <li><a href="#services" className="hover:text-brand-400 transition-colors">Mobile App Development</a></li>
               <li><a href="#services" className="hover:text-brand-400 transition-colors">Cloud & DevOps</a></li>
               <li><a href="#services" className="hover:text-brand-400 transition-colors">API Integration</a></li>
-              <li><a href="#services" className="hover:text-brand-400 transition-colors">AI & Automation</a></li>
             </ul>
           </div>
 
           {/* Col 4: Oracle Specialization */}
           <div>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-brand-500 pl-2">
-              Oracle Modules
+              Oracle Specialization
             </h4>
             <ul className="space-y-2.5 text-xs">
-              <li><a href="#oracle-solutions" className="hover:text-brand-400 transition-colors">ERP Financials</a></li>
-              <li><a href="#oracle-solutions" className="hover:text-brand-400 transition-colors">HCM & Global Payroll</a></li>
+              <li><a href="#services" className="hover:text-brand-400 transition-colors">Fusion Financials & HCM</a></li>
+              <li><a href="#services" className="hover:text-brand-400 transition-colors">Oracle APEX Low-Code</a></li>
               <li><a href="#oracle-solutions" className="hover:text-brand-400 transition-colors">SCM & Procurement</a></li>
               <li><a href="#oracle-solutions" className="hover:text-brand-400 transition-colors">Manufacturing MES</a></li>
               <li><a href="#oracle-solutions" className="hover:text-brand-400 transition-colors">OIC Integration</a></li>

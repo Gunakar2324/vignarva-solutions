@@ -127,12 +127,12 @@ const Hero = ({ onOpenConsultation }) => {
                 <div className="bg-slate-50/80 p-4 rounded-2xl border border-slate-100 space-y-2">
                   <div className="flex items-center justify-between text-xs text-slate-600 font-medium">
                     <span className="flex items-center gap-1.5">
-                      <Activity className="w-3.5 h-3.5 text-brand-600" /> Migration & SLA Health
+                      <Activity className="w-3.5 h-3.5 text-brand-600" /> Oracle & Cloud Readiness
                     </span>
-                    <span className="font-bold text-brand-600">99.98%</span>
+                    <span className="font-bold text-brand-600">100% Ready</span>
                   </div>
                   <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-brand-600 to-accent-500 rounded-full w-[99.98%]" />
+                    <div className="h-full bg-gradient-to-r from-brand-600 to-accent-500 rounded-full w-full" />
                   </div>
                 </div>
               </div>
@@ -147,8 +147,8 @@ const Hero = ({ onOpenConsultation }) => {
                   <Star className="w-5 h-5 fill-white" />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-500 font-medium">Client Rating</div>
-                  <div className="text-sm font-extrabold text-slate-900">4.9 / 5.0 Rating</div>
+                  <div className="text-xs text-slate-500 font-medium">Quality Focus</div>
+                  <div className="text-sm font-extrabold text-slate-900">Modern Standards</div>
                 </div>
               </motion.div>
 
@@ -163,7 +163,7 @@ const Hero = ({ onOpenConsultation }) => {
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 font-medium">Oracle Expertise</div>
-                  <div className="text-sm font-extrabold text-slate-900">100+ Projects Done</div>
+                  <div className="text-sm font-extrabold text-slate-900">Certified Specialists</div>
                 </div>
               </motion.div>
 

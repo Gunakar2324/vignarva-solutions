@@ -39,9 +39,9 @@ const whyCards = [
     description: "Rigorous automated test coverage, security vulnerability scanning, and performance benchmark audits."
   },
   {
-    title: "Customer Satisfaction",
+    title: "Dedicated Commitment",
     icon: HeartHandshake,
-    description: "99%+ retention rate with long-term enterprise partnerships based on transparency, trust, and excellence."
+    description: "Unwavering commitment to client success with transparent communication, trust, and engineering excellence from day one."
   }
 ];
 

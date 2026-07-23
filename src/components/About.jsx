@@ -7,7 +7,7 @@ const About = () => {
     {
       icon: MapPin,
       title: "Chennai Headquarters",
-      description: "Based in Chennai, Tamil Nadu, serving global enterprise clients with dedicated onshore and offshore delivery models.",
+      description: "Based in Chennai, Tamil Nadu, equipped to serve organizations with flexible onshore and offshore delivery models.",
     },
     {
       icon: Award,

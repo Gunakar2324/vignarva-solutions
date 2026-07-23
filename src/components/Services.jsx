@@ -2,10 +2,27 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Database, Code2, Globe, Smartphone, Cloud, Cpu, Sparkles, 
-  Palette, Bot, BarChart4, Wrench, ArrowRight, CheckCircle, X
+  Palette, Bot, BarChart4, Wrench, ArrowRight, CheckCircle, X,
+  Layers, Zap, Boxes
 } from 'lucide-react';
 
 const servicesList = [
+  {
+    id: 'oracle-fusion',
+    title: "Oracle Fusion Modules",
+    featured: true,
+    icon: Layers,
+    description: "Comprehensive implementation, configuration, customization, and support for Oracle Fusion Cloud modules including Financials, HCM, SCM, and Procurement.",
+    points: ["Oracle Fusion Financials Cloud", "Oracle Fusion HCM & Global Payroll", "Oracle Fusion Supply Chain (SCM)", "Oracle Fusion Procurement & PPM"]
+  },
+  {
+    id: 'oracle-apex',
+    title: "Oracle APEX Development",
+    featured: true,
+    icon: Zap,
+    description: "Rapid low-code enterprise application development using Oracle APEX (Application Express) seamlessly integrated with Oracle Database and EBS/Fusion systems.",
+    points: ["Custom Low-Code APEX Web Apps", "EBS & Fusion APEX Extensions", "Database & PL/SQL Logic", "Responsive UI & Report Automation"]
+  },
   {
     id: 'oracle',
     title: "Oracle IT Solutions",
