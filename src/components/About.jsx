@@ -80,7 +80,7 @@ const About = () => {
                 </div>
                 <div className="p-4 rounded-2xl bg-white border border-slate-100 shadow-xs">
                   <div className="text-2xl sm:text-3xl font-black text-accent-600">Oracle</div>
-                  <div className="text-xs text-slate-500 font-medium mt-0.5">Ecosystem Specialists</div>
+                  <div className="text-xs text-slate-500 font-medium mt-0.5">ERP Specialists</div>
                 </div>
               </div>
             </div>

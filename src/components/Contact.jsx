@@ -7,7 +7,7 @@ const Contact = () => {
     name: '',
     email: '',
     phone: '',
-    subject: 'Oracle IT Solutions',
+    subject: '',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
@@ -17,7 +17,7 @@ const Contact = () => {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', subject: 'Oracle IT Solutions', message: '' });
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
     }, 4000);
   };
 
@@ -73,27 +73,27 @@ const Contact = () => {
                   </div>
                 </a>
 
-                <a href="mailto:g.vigneshkumar007@gmail.com" className="flex items-start gap-4 group p-3 rounded-2xl hover:bg-slate-50 transition-colors">
+                <a href="mailto:vigneshkumar@vignarvasolutions.com" className="flex items-start gap-4 group p-3 rounded-2xl hover:bg-slate-50 transition-colors">
                   <div className="w-12 h-12 rounded-2xl bg-accent-50 text-accent-600 flex items-center justify-center shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Email</div>
                     <div className="text-base font-extrabold text-slate-900 group-hover:text-brand-600 transition-colors break-all">
-                      g.vigneshkumar007@gmail.com
+                      vigneshkumar@vignarvasolutions.com
                     </div>
                     <div className="text-xs text-slate-500">Dedicated Enterprise Inquiries</div>
                   </div>
                 </a>
 
-                <div className="flex items-start gap-4 p-3 rounded-2xl">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                <div className="flex items-start gap-4 p-3 rounded-2xl group hover:bg-slate-50 transition-colors">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Location</div>
-                    <div className="text-base font-extrabold text-slate-900">
-                      Chennai, Tamil Nadu
+                    <div className="text-base font-extrabold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                      Flat 104,Osborne, Hiranandani Parks, Vadakkupattu, Oragadam, Chennai - 603 204
                     </div>
                     <div className="text-xs text-slate-500">India Tech Hub Delivery Center</div>
                   </div>
@@ -101,21 +101,21 @@ const Contact = () => {
               </div>
 
               {/* Business Hours Box */}
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider">
-                  <Clock className="w-4 h-4 text-brand-600" /> Business Hours
+              <div className="p-4 rounded-2xl bg-brand-700 border border-brand-800 text-white space-y-2 shadow-lg shadow-brand-700/20">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white">
+                  <Clock className="w-4 h-4 text-white" /> Business Hours
                 </div>
-                <div className="text-xs text-slate-600 flex justify-between">
+                <div className="text-xs text-white/80 flex justify-between">
                   <span>Monday – Friday:</span>
-                  <span className="font-semibold text-slate-900">9:00 AM – 6:00 PM IST</span>
+                  <span className="font-semibold text-white">9:00 AM – 6:00 PM IST</span>
                 </div>
-                <div className="text-xs text-slate-600 flex justify-between">
+                <div className="text-xs text-white/80 flex justify-between">
                   <span>Saturday:</span>
-                  <span className="font-semibold text-slate-900">9:00 AM – 2:00 PM IST</span>
+                  <span className="font-semibold text-white">9:00 AM – 2:00 PM IST</span>
                 </div>
-                <div className="text-xs text-slate-600 flex justify-between">
+                <div className="text-xs text-white/80 flex justify-between">
                   <span>Sunday:</span>
-                  <span className="font-semibold text-brand-600">Closed (24x7 SLA Support Active)</span>
+                  <span className="font-semibold text-brand-200">Closed (24x7 SLA Support Active)</span>
                 </div>
               </div>
 
@@ -170,24 +170,24 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">Your Name *</label>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">Name <span className="text-red-500">*</span></label>
                       <input
                         required
                         type="text"
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        placeholder="Vignesh Kumar"
+                        placeholder="Ex. Jon"
                         className="w-full px-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">Email Address *</label>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">Email Address <span className="text-red-500">*</span></label>
                       <input
                         required
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        placeholder="vignesh@company.com"
+                        placeholder="jon@gmail.com"
                         className="w-full px-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all"
                       />
                     </div>
@@ -195,23 +195,24 @@ const Contact = () => {
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">Phone Number *</label>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">Phone Number <span className="text-red-500">*</span></label>
                       <input
                         required
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        placeholder="+91 96004 46220"
+                        placeholder="+91 98765 43210"
                         className="w-full px-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">Service Required</label>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">Service Required <span className="text-red-500">*</span></label>
                       <select
                         value={formData.subject}
                         onChange={(e) => setFormData({...formData, subject: e.target.value})}
                         className="w-full px-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all"
                       >
+                        <option value="">-- Select Service Request --</option>
                         <option value="Oracle IT Solutions">Oracle IT Solutions (ERP/HCM/SCM)</option>
                         <option value="Enterprise Software Development">Enterprise Software Development</option>
                         <option value="Web & Mobile Application">Web & Mobile Application</option>
@@ -223,7 +224,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">Project Details / Message *</label>
+                    <label className="block text-xs font-bold text-slate-700 mb-1">Project Details / Message <span className="text-red-500">*</span></label>
                     <textarea
                       required
                       rows={4}
