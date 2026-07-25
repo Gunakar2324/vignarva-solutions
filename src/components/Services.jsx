@@ -165,18 +165,9 @@ const Services = ({ onOpenConsultation }) => {
                     {service.title}
                   </h3>
 
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5">
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
                     {service.description}
                   </p>
-
-                  <div className="space-y-2 mb-6">
-                    {service.points.map((pt, pIdx) => (
-                      <div key={pIdx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
-                        <CheckCircle className="w-3.5 h-3.5 text-brand-500 shrink-0" />
-                        <span>{pt}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
