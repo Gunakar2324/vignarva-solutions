@@ -12,94 +12,94 @@ const servicesList = [
     title: "Oracle Fusion Modules",
     featured: true,
     icon: Layers,
-    description: "Comprehensive implementation, configuration, customization, and support for Oracle Fusion Cloud modules including Financials, HCM, SCM, and Procurement.",
-    points: ["Oracle Fusion Financials Cloud", "Oracle Fusion HCM & Global Payroll", "Oracle Fusion Supply Chain (SCM)", "Oracle Fusion Procurement & PPM"]
+    description: "Implementation and support for Financials, HCM, SCM, and Procurement.",
+    points: ["Financials Cloud", "HCM & Payroll", "SCM & Supply Chain", "Procurement & Projects"]
   },
   {
     id: 'oracle-apex',
     title: "Oracle APEX Development",
     featured: true,
     icon: Zap,
-    description: "Rapid low-code enterprise application development using Oracle APEX (Application Express) seamlessly integrated with Oracle Database and EBS/Fusion systems.",
-    points: ["Custom Low-Code APEX Web Apps", "EBS & Fusion APEX Extensions", "Database & PL/SQL Logic", "Responsive UI & Report Automation"]
+    description: "Low-code enterprise apps integrated with Oracle Database and EBS/Fusion.",
+    points: ["Low-code APEX apps", "EBS/Fusion extensions", "PL/SQL logic", "Responsive dashboards"]
   },
   {
     id: 'oracle',
     title: "Oracle IT Solutions",
     featured: true,
     icon: Database,
-    description: "Complete Oracle ERP Cloud implementation, HCM, SCM, Financials, EBS migration, custom module development, and 24/7 managed services.",
-    points: ["Oracle Cloud ERP & HCM", "SCM & Manufacturing MES", "OIC & API Middleware Integrations", "OTBI & Analytics Cloud"]
+    description: "Oracle ERP Cloud implementation, migration, custom modules, and managed services.",
+    points: ["ERP & HCM Cloud", "SCM & MES", "Middleware integrations", "Analytics reporting"]
   },
   {
     id: 'enterprise',
     title: "Enterprise Software Development",
     icon: Code2,
-    description: "Robust, scalable enterprise applications built with modern architectures, microservices, and high-security compliance standards.",
-    points: ["Custom Enterprise Solutions", "Microservices Architecture", "Legacy System Modernization", "Secure Scalable Workflows"]
+    description: "Scalable enterprise applications built with modern, secure architectures.",
+    points: ["Custom enterprise systems", "Microservices", "Legacy modernization", "Secure workflows"]
   },
   {
     id: 'web',
     title: "Web Application Development",
     icon: Globe,
-    description: "Next-gen web applications engineered using React, Vue, Angular, Node.js, and Java Spring Boot for lightning-fast digital performance.",
-    points: ["Progressive Web Apps (PWA)", "Single Page Applications", "Responsive SaaS Platforms", "High-Performance Speed"]
+    description: "React, Vue, Angular, Node.js, and Spring Boot apps for fast digital experiences.",
+    points: ["PWA & SPA", "Responsive platforms", "SaaS apps", "High-speed UX"]
   },
   {
     id: 'mobile',
     title: "Mobile Application Development",
     icon: Smartphone,
-    description: "Native and cross-platform mobile apps for iOS and Android, providing intuitive user experiences and real-time backend synchronization.",
-    points: ["iOS & Android Apps", "Cross-Platform Frameworks", "Offline Data Sync", "App Store Deployment"]
+    description: "Native and cross-platform apps with backend sync and intuitive UX.",
+    points: ["iOS & Android", "Cross-platform", "Offline sync", "App deployment"]
   },
   {
     id: 'cloud',
     title: "Cloud Solutions",
     icon: Cloud,
-    description: "Comprehensive cloud architecting, AWS, Azure, and Oracle Cloud Infrastructure (OCI) migration, DevOps automation, and Docker/K8s containerization.",
-    points: ["Cloud Infrastructure (OCI/AWS/Azure)", "DevOps & CI/CD Pipelines", "Docker & Kubernetes Deployment", "Cloud Security & Compliance"]
+    description: "Cloud architecture, OCI/AWS/Azure migration, DevOps, and containers.",
+    points: ["OCI/AWS/Azure", "CI/CD pipelines", "Kubernetes", "Cloud security"]
   },
   {
     id: 'api',
     title: "API Integration",
     icon: Cpu,
-    description: "Seamless REST & SOAP API development, webhook integrations, middleware connectors, and real-time enterprise data synchronization.",
-    points: ["RESTful & GraphQL APIs", "Enterprise Bus (ESB)", "Third-Party SaaS Connectors", "Data Format Transformation"]
+    description: "REST/SOAP APIs, middleware connectors, and real-time data sync.",
+    points: ["REST & GraphQL", "ESB connectors", "SaaS connectors", "Data transformation"]
   },
   {
     id: 'digital',
     title: "Digital Transformation",
     icon: Sparkles,
-    description: "Strategic digitization of core operational processes to increase organizational agility, reduce costs, and elevate customer experience.",
-    points: ["Business Process Mapping", "Paperless Workflow Automation", "Legacy Migration Strategy", "Digital Growth Consulting"]
+    description: "Process automation to improve agility, reduce costs, and improve customer experience.",
+    points: ["Process mapping", "Workflow automation", "Legacy strategy", "Growth consulting"]
   },
   {
     id: 'uiux',
     title: "UI / UX Design",
     icon: Palette,
-    description: "User-centric interface design, wireframing, interactive prototyping, and design systems crafted for optimal conversion and usability.",
-    points: ["Design Systems & UI Kits", "User Journey & Wireframing", "Interactive Prototypes", "Accessibility Compliance"]
+    description: "User-centric design, wireframing, prototyping, and accessible interfaces.",
+    points: ["Design systems", "User journeys", "Interactive prototypes", "Accessibility"]
   },
   {
     id: 'ai',
     title: "AI & Automation",
     icon: Bot,
-    description: "Intelligent process automation (RPA), machine learning workflows, and natural language processing to automate complex business tasks.",
-    points: ["Robotic Process Automation", "Machine Learning Analytics", "Chatbots & Virtual Assistants", "Document Intelligence"]
+    description: "RPA, machine learning, and automation workflows for business processes.",
+    points: ["RPA automation", "ML workflows", "Chatbots", "Document intelligence"]
   },
   {
     id: 'bi',
     title: "Business Intelligence",
     icon: BarChart4,
-    description: "Data warehousing, real-time analytics, custom reporting, and executive dashboards for data-driven strategic decision making.",
-    points: ["Executive Dashboards", "Data Warehouse Engineering", "Real-Time ETL Pipelines", "Predictive Forecasting"]
+    description: "Analytics, dashboards, data warehousing, and reporting.",
+    points: ["Executive dashboards", "Data warehousing", "Real-time ETL", "Forecasting"]
   },
   {
     id: 'maintenance',
     title: "Application Maintenance",
     icon: Wrench,
-    description: "Proactive 24x7 application monitoring, bug fixes, performance tuning, security patching, and SLA-backed ongoing support.",
-    points: ["24×7 Managed IT Support", "Performance Optimization", "Security Patching & Audits", "SLA Guarantee"]
+    description: "24x7 monitoring, bug fixes, tuning, patching, and ongoing support.",
+    points: ["24×7 support", "Performance tuning", "Security patching", "SLA care"]
   }
 ];
 
@@ -107,7 +107,7 @@ const Services = ({ onOpenConsultation }) => {
   const [selectedService, setSelectedService] = useState(null);
 
   return (
-    <section id="services" className="py-24 bg-white relative overflow-hidden">
+    <section id="services" className="py-10 bg-white relative overflow-hidden">
       
       {/* Decorative Orbs */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-brand-50 rounded-full blur-3xl -z-10" />
@@ -124,7 +124,7 @@ const Services = ({ onOpenConsultation }) => {
             Comprehensive <span className="bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">IT Services</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            From Oracle ERP implementations to custom cloud engineering, we deliver end-to-end IT services designed for continuous business growth.
+            Oracle ERP, cloud, and software services for modern businesses.
           </p>
         </div>
 
@@ -139,7 +139,7 @@ const Services = ({ onOpenConsultation }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className={`glass-card p-7 rounded-3xl border transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 ${
+                className={`glass-card p-6 rounded-3xl border transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 ${
                   service.featured
                     ? 'border-brand-300 ring-2 ring-brand-500/20 bg-gradient-to-b from-brand-50/50 to-white shadow-lg'
                     : 'border-slate-200/80 hover:border-brand-300 shadow-xs'
@@ -165,7 +165,7 @@ const Services = ({ onOpenConsultation }) => {
                     {service.title}
                   </h3>
 
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5">
                     {service.description}
                   </p>
 
@@ -232,6 +232,11 @@ const Services = ({ onOpenConsultation }) => {
                   <span>{pt}</span>
                 </div>
               ))}
+              {['enterprise', 'web', 'mobile'].includes(selectedService.id) && (
+                <div className="pt-3 text-xs text-brand-600 font-semibold">
+                  More Info: <a href="https://techprogenz.in" target="_blank" rel="noreferrer" className="underline hover:text-brand-700">techprogenz.in</a>
+                </div>
+              )}
             </div>
 
             <div className="flex items-center justify-end gap-3">

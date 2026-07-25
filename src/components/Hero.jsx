@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles, CheckCircle2, Database, ShieldCheck, Cloud, Cpu, 
 
 const Hero = ({ onOpenConsultation }) => {
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-mesh-pattern">
+    <section id="home" className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-mesh-pattern">
       
       {/* Background Soft Gradient Orbs & Shapes */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-brand-300/30 via-accent-300/20 to-indigo-300/20 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-subtle" />
@@ -40,14 +40,14 @@ const Hero = ({ onOpenConsultation }) => {
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-              We deliver Oracle ERP Cloud, Enterprise Applications, Cloud Solutions, Digital Transformation, Custom Software Development, and Managed IT Consulting services to power enterprise growth.
+              Oracle ERP, cloud, and digital solutions for modern businesses.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
               <button
                 onClick={onOpenConsultation}
-                className="w-full sm:w-auto px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 rounded-2xl shadow-lg shadow-brand-500/25 hover:shadow-xl hover:shadow-brand-500/35 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-3 group"
+                className="w-full sm:w-auto px-7 py-3.5 text-base font-bold text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 rounded-2xl shadow-lg shadow-brand-500/25 hover:shadow-xl hover:shadow-brand-500/35 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-3 group"
               >
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

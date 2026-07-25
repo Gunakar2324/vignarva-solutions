@@ -6,48 +6,48 @@ const whyCards = [
   {
     title: "Experienced Professionals",
     icon: Award,
-    description: "Seasoned enterprise architects, full-stack engineers, and cloud consultants with proven track records."
+    description: "Enterprise architects, developers, and cloud consultants with proven delivery."
   },
   {
     title: "Oracle Experts",
     icon: ShieldCheck,
-    description: "Certified Oracle consultants specializing in ERP Cloud, EBS migration, HCM, SCM, and OIC middleware."
+    description: "Certified Oracle consultants for ERP, HCM, SCM, and middleware."
   },
   {
     title: "End-to-End Solutions",
     icon: Layers,
-    description: "From strategy, architecture, and licensing to custom coding, QA, deployment, and ongoing managed support."
+    description: "From strategy and architecture to coding, QA, deployment, and support."
   },
   {
     title: "Agile Delivery",
     icon: Zap,
-    description: "Iterative sprint cycles ensuring transparent progress tracking, fast feedback loops, and rapid time-to-market."
+    description: "Sprint delivery with clear progress and faster time-to-market."
   },
   {
     title: "24×7 Support",
     icon: Clock,
-    description: "Dedicated round-the-clock technical monitoring and helpdesk backing critical enterprise SLA guarantees."
+    description: "Round-the-clock monitoring and SLA-backed support."
   },
   {
     title: "Affordable Pricing",
     icon: DollarSign,
-    description: "Optimized onshore/offshore cost structures delivering high-end enterprise software quality at competitive value."
+    description: "Optimized delivery models for enterprise-grade value."
   },
   {
     title: "Quality Assurance",
     icon: CheckCircle2,
-    description: "Rigorous automated test coverage, security vulnerability scanning, and performance benchmark audits."
+    description: "Automated testing, security scanning, and performance audits."
   },
   {
     title: "Dedicated Commitment",
     icon: HeartHandshake,
-    description: "Unwavering commitment to client success with transparent communication, trust, and engineering excellence from day one."
+    description: "Client success through clear communication and excellent delivery."
   }
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section id="why-us" className="py-24 bg-gradient-to-b from-brand-50/50 via-white to-slate-50 relative overflow-hidden">
+    <section id="why-us" className="py-16 bg-gradient-to-b from-brand-50/50 via-white to-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -59,7 +59,7 @@ const WhyChooseUs = () => {
             Why Choose <span className="bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">Vignarva Solutions</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            We combine deep technical expertise with a relentless focus on client satisfaction and tangible return on investment.
+            Expert Oracle solutions for measurable impact.
           </p>
         </div>
 

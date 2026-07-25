@@ -4,37 +4,34 @@ import { Star, Quote, Building, CheckCircle2 } from 'lucide-react';
 
 const testimonialsList = [
   {
-    quote: "Vignarva Solutions seamlessly executed our Oracle Cloud ERP Financials & SCM migration. Their deep domain expertise in Oracle modules saved us months of downtime and optimized our procurement workflow.",
+    quote: "Vignarva Solutions executed our Oracle Cloud ERP migration with minimal downtime and improved procurement efficiency.",
     author: "Ramesh Krishnan",
     role: "VP of Information Technology",
     company: "Global Manufacturing Corp",
-    location: "Chennai, India",
     rating: 5,
-    tag: "Oracle Cloud ERP Migration"
+    tag: "Oracle Cloud ERP"
   },
   {
-    quote: "The OIC middleware and custom REST API integrations designed by Vignarva enabled real-time sync between our shop floor MES systems and Oracle Cloud. Outstanding engineering team!",
+    quote: "Their OIC middleware and REST API work synced our MES and Oracle Cloud in real time.",
     author: "Anand Venkatesh",
     role: "Director of Enterprise Systems",
     company: "Apex Automotive Tech",
-    location: "Bengaluru, India",
     rating: 5,
-    tag: "Oracle OIC Integration"
+    tag: "OIC Integration"
   },
   {
-    quote: "Partnering with Vignarva Solutions for our Oracle HCM Cloud implementation transformed our payroll and talent management operations. Their 24x7 support has been stellar.",
+    quote: "Vignarva transformed our Oracle HCM implementation and continues to provide reliable 24x7 support.",
     author: "Deepa Sundaram",
     role: "Head of HR Systems & Payroll",
     company: "Logistics Enterprise Ltd",
-    location: "Chennai, India",
     rating: 5,
-    tag: "Oracle HCM Cloud"
+    tag: "Oracle HCM"
   }
 ];
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="testimonials" className="py-16 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -46,7 +43,7 @@ const Testimonials = () => {
             What Our <span className="bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">Clients Say</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            Hear from IT leaders and C-level executives who trust Vignarva Solutions for their mission-critical enterprise systems.
+            Feedback from leaders who choose Vignarva Solutions for enterprise systems.
           </p>
         </div>
 
@@ -84,10 +81,7 @@ const Testimonials = () => {
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <div>
                   <div className="text-sm font-extrabold text-slate-900">{t.author}</div>
-                  <div className="text-xs text-brand-600 font-medium">{t.role}</div>
-                  <div className="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5">
-                    <Building className="w-3 h-3 text-slate-400" /> {t.company}
-                  </div>
+                  <div className="text-xs text-brand-600 font-medium">{t.role}, {t.company}</div>
                 </div>
                 <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
               </div>
