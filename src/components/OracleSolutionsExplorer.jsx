@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Database, Layers, DollarSign, Users, Truck, Factory, Cpu, BarChart3, CheckCircle2, ArrowRight, ShieldCheck, Sparkles, ChevronRight } from 'lucide-react';
+import { Database, Layers, DollarSign, Users, Truck, Factory, Cpu, BarChart3, CheckCircle2, ArrowRight, ShieldCheck, Sparkles, ChevronRight, X } from 'lucide-react';
 
 const oracleData = {
   "ERP Cloud": {
@@ -116,16 +116,19 @@ const oracleData = {
 
 const OracleSolutionsExplorer = ({ onOpenConsultation }) => {
   const [activeTab, setActiveTab] = useState("ERP Cloud");
+  const [showMoreInfo, setShowMoreInfo] = useState(false);
   const currentData = oracleData[activeTab];
 
+  const closeMoreInfo = () => setShowMoreInfo(false);
+
   return (
-    <section id="oracle-solutions" className="py-24 bg-gradient-to-b from-brand-50/60 via-white to-slate-50 relative overflow-hidden">
+    <section id="oracle-solutions" className="py-20 bg-gradient-to-b from-brand-50/60 via-white to-slate-50 relative overflow-hidden">
       
       {/* Background Accent Gradients */}
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-brand-200/30 rounded-full blur-3xl pointer-events-none -z-10" />
       <div className="absolute bottom-10 right-0 w-96 h-96 bg-accent-200/30 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -137,7 +140,7 @@ const OracleSolutionsExplorer = ({ onOpenConsultation }) => {
             Oracle IT <span className="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 bg-clip-text text-transparent">Solutions</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
-            Complete Oracle Cloud implementation, customization, migration, integration, rollout, support, analytics, and managed services tailored for high-growth enterprises.
+            Oracle Cloud implementation, migration, integration, and managed services for growing enterprises.
           </p>
         </div>
 
@@ -204,55 +207,78 @@ const OracleSolutionsExplorer = ({ onOpenConsultation }) => {
                   ))}
                 </div>
 
-                <div className="pt-4">
+                <div className="pt-2 flex flex-wrap items-center gap-6">
+                  <button
+                    onClick={() => setShowMoreInfo(true)}
+                    className="text-sm font-bold text-brand-600 hover:text-brand-700 inline-flex items-center gap-1 transition-all"
+                  >
+                    More Info <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
                   <button
                     onClick={onOpenConsultation}
-                    className="w-full sm:w-auto px-6 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-md flex items-center justify-center gap-2 transition-all hover:gap-3"
+                    className="px-6 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-md flex items-center justify-center gap-2 transition-all hover:gap-3"
                   >
                     Consult Oracle Experts <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
               </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
-              {/* Right Modules Grid Column */}
-              <div className="lg:col-span-7 space-y-4">
-                <div className="flex items-center justify-between">
-                  <h4 className="text-sm font-bold text-slate-800 uppercase tracking-wider flex items-center gap-2">
-                    <Layers className="w-4 h-4 text-brand-600" /> Supported Oracle Modules ({currentData.modules.length})
-                  </h4>
-                  <span className="text-xs text-slate-500">Fully Customizable & Integrated</span>
+        <AnimatePresence>
+          {showMoreInfo ? (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeMoreInfo}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm"
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.98 }}
+                transition={{ duration: 0.25 }}
+                onClick={(e) => e.stopPropagation()}
+                className="w-full max-w-3xl rounded-3xl bg-white shadow-2xl border border-slate-200 overflow-hidden"
+              >
+                <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
+                  <div>
+                    <p className="text-xs font-semibold text-brand-600 uppercase tracking-widest">Supported Oracle Modules</p>
+                    <h3 className="text-xl font-extrabold text-slate-900 mt-1">{activeTab}</h3>
+                  </div>
+                  <button
+                    onClick={closeMoreInfo}
+                    className="p-2 rounded-full text-slate-500 hover:text-slate-900 hover:bg-slate-100"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-3">
+                <div className="px-6 py-5 grid gap-3 sm:grid-cols-2">
                   {currentData.modules.map((moduleName, idx) => (
-                    <div
-                      key={idx}
-                      className="p-3.5 rounded-xl bg-white/90 border border-slate-200/70 hover:border-brand-300 hover:shadow-md transition-all duration-200 flex items-center gap-3 group"
-                    >
-                      <div className="w-2.5 h-2.5 rounded-full bg-brand-500 group-hover:scale-125 transition-transform" />
-                      <span className="text-xs sm:text-sm font-semibold text-slate-800 group-hover:text-brand-600 transition-colors">
-                        {moduleName}
-                      </span>
+                    <div key={idx} className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                      <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Module</div>
+                      <p className="mt-2 text-sm font-medium text-slate-800">{moduleName}</p>
                     </div>
                   ))}
                 </div>
 
-                {/* Additional Technical Assurance Footer Card */}
-                <div className="mt-6 p-4 rounded-2xl bg-gradient-to-r from-brand-50 to-accent-50 border border-brand-100 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <ShieldCheck className="w-6 h-6 text-brand-600" />
-                    <div>
-                      <div className="text-xs font-bold text-slate-900">Oracle Cloud Migration & Upgrade Path</div>
-                      <div className="text-[11px] text-slate-600">E-Business Suite (EBS) to Oracle Cloud ERP Migration Ready</div>
-                    </div>
-                  </div>
-                  <ChevronRight className="w-5 h-5 text-brand-600" />
+                <div className="px-6 py-5 border-t border-slate-200 bg-slate-50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <p className="text-sm text-slate-600">
+                    Explore the Oracle modules available for {activeTab}. Click outside or use the close button to return.
+                  </p>
+                  <button
+                    onClick={closeMoreInfo}
+                    className="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition"
+                  >
+                    Close
+                  </button>
                 </div>
-
-              </div>
-
-            </div>
-          </motion.div>
+              </motion.div>
+            </motion.div>
+          ) : null}
         </AnimatePresence>
 
       </div>

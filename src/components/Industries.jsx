@@ -3,21 +3,21 @@ import { motion } from 'framer-motion';
 import { Factory, Car, Stethoscope, ShoppingBag, Truck, Network, GraduationCap, Building2, Landmark, PhoneCall } from 'lucide-react';
 
 const industryList = [
-  { name: "Manufacturing", icon: Factory, useCase: "MES integration, shop floor control, barcode tracking & Oracle ERP Manufacturing." },
-  { name: "Automotive", icon: Car, useCase: "Supply chain visibility, quality compliance & just-in-time inventory systems." },
-  { name: "Healthcare", icon: Stethoscope, useCase: "HIPAA-compliant patient portals, ERP financials & medical supply chain tracking." },
-  { name: "Retail", icon: ShoppingBag, useCase: "Omnichannel inventory sync, POS integration & customer analytics dashboards." },
-  { name: "Logistics", icon: Truck, useCase: "Fleet management, Oracle TMS routes optimization & real-time dispatch tracking." },
-  { name: "Supply Chain", icon: Network, useCase: "Supplier portals, procurement automation, demand planning & WMS operations." },
-  { name: "Education", icon: GraduationCap, useCase: "Student information systems, cloud HCM payroll & campus enterprise resource planning." },
-  { name: "Banking", icon: Building2, useCase: "Secure general ledger accounting, core banking API integrations & risk analytics." },
-  { name: "Finance", icon: Landmark, useCase: "Automated AP/AR reconciliation, tax engine automation & financial reporting." },
-  { name: "Telecom", icon: PhoneCall, useCase: "Billing middleware integrations, asset tracking & high-volume customer portals." },
+  { name: "Manufacturing", icon: Factory, useCase: "MES integration, shop floor control, and Oracle ERP." },
+  { name: "Automotive", icon: Car, useCase: "Supply chain visibility, quality compliance, and JIT inventory." },
+  { name: "Healthcare", icon: Stethoscope, useCase: "Patient portals, ERP financials, and supply chain tracking." },
+  { name: "Retail", icon: ShoppingBag, useCase: "Omnichannel inventory sync, POS integration, and customer analytics." },
+  { name: "Logistics", icon: Truck, useCase: "Fleet management, TMS routing, and dispatch tracking." },
+  { name: "Supply Chain", icon: Network, useCase: "Supplier portals, procurement automation, and demand planning." },
+  { name: "Education", icon: GraduationCap, useCase: "Student systems, cloud HCM payroll, and campus ERP." },
+  { name: "Banking", icon: Building2, useCase: "Secure accounting, banking APIs, and risk analytics." },
+  { name: "Finance", icon: Landmark, useCase: "Automated AP/AR, tax automation, and reporting." },
+  { name: "Telecom", icon: PhoneCall, useCase: "Billing integrations, asset tracking, and customer portals." },
 ];
 
 const Industries = () => {
   return (
-    <section id="industries" className="py-24 bg-white relative overflow-hidden">
+    <section id="industries" className="py-16 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -29,7 +29,7 @@ const Industries = () => {
             Industries We <span className="bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">Serve</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            Empowering key industry sectors with specialized domain knowledge, compliance frameworks, and custom IT solutions.
+            Specialized IT solutions for core industries.
           </p>
         </div>
 

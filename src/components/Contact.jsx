@@ -22,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-white via-slate-50 to-brand-50/50 relative overflow-hidden">
+    <section id="contact" className="py-20 bg-gradient-to-b from-white via-slate-50 to-brand-50/50 relative overflow-hidden">
       
       {/* Decorative Orbs */}
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-brand-100/40 rounded-full blur-3xl -z-10" />
@@ -39,7 +39,7 @@ const Contact = () => {
             Get In <span className="bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">Touch</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            Have a question about Oracle ERP implementation, custom software development, or cloud migration? Speak to our experts today.
+            Need help with Oracle ERP, cloud migration, or custom software? Our team is ready.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ const Contact = () => {
                     <div className="text-base font-extrabold text-slate-900 group-hover:text-brand-600 transition-colors">
                       +91 9600446220
                     </div>
-                    <div className="text-xs text-slate-500">Mon - Sat (9:00 AM - 6:00 PM IST)</div>
+                    <div className="text-xs text-slate-500">Mon–Sat, 9am–6pm IST</div>
                   </div>
                 </a>
 
@@ -82,7 +82,7 @@ const Contact = () => {
                     <div className="text-base font-extrabold text-slate-900 group-hover:text-brand-600 transition-colors break-all">
                       vigneshkumar@vignarvasolutions.com
                     </div>
-                    <div className="text-xs text-slate-500">Dedicated Enterprise Inquiries</div>
+                    <div className="text-xs text-slate-500">Support & consulting</div>
                   </div>
                 </a>
 
@@ -115,7 +115,7 @@ const Contact = () => {
                 </div>
                 <div className="text-xs text-white/80 flex justify-between">
                   <span>Sunday:</span>
-                  <span className="font-semibold text-brand-200">Closed (24x7 SLA Support Active)</span>
+                  <span className="font-semibold text-brand-200">Closed</span>
                 </div>
               </div>
 
@@ -151,7 +151,7 @@ const Contact = () => {
                 Send Us a Message
               </h3>
               <p className="text-slate-600 text-xs sm:text-sm mb-6">
-                Fill out the form below and an Oracle IT & Cloud Specialist will get back to you within 2 business hours.
+                Fill this out and an Oracle specialist will reply shortly.
               </p>
 
               {submitted ? (
@@ -206,7 +206,7 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">Service Required <span className="text-red-500">*</span></label>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">Service Request <span className="text-red-500">*</span></label>
                       <select
                         value={formData.subject}
                         onChange={(e) => setFormData({...formData, subject: e.target.value})}

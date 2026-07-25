@@ -9,7 +9,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
     email: '',
     phone: '',
     company: '',
-    interest: 'Oracle ERP Cloud',
+    interest: '',
     notes: ''
   });
 
@@ -42,8 +42,8 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                 className="w-9 h-9 object-contain"
               />
               <div>
-                <h3 className="text-lg font-bold text-slate-900">Request Enterprise Consultation</h3>
-                <p className="text-xs text-slate-500">Vignarva Solutions • IT Consulting</p>
+                <h3 className="text-lg font-bold text-slate-900">Request Consultation</h3>
+                <p className="text-xs text-slate-500">Oracle & IT Services</p>
               </div>
             </div>
             <button
@@ -61,7 +61,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
               </div>
               <h3 className="text-2xl font-extrabold text-slate-900">Consultation Scheduled!</h3>
               <p className="text-sm text-slate-600">
-                Thank you, <strong>{formData.name}</strong>. Our lead Oracle IT architect will connect with you via email at <strong>{formData.email}</strong> or phone (+91).
+                Thank you, <strong>{formData.name}</strong>. We will reach out via <strong>{formData.email}</strong> or phone shortly.
               </p>
             </div>
           ) : (
@@ -72,7 +72,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                   <input
                     required
                     type="text"
-                    placeholder="Vignesh Kumar"
+                    placeholder="Ex: Jon Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                     className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500"
@@ -83,7 +83,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                   <input
                     required
                     type="email"
-                    placeholder="vignesh@company.com"
+                    placeholder="Ex: jon.doe@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500"
@@ -97,7 +97,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                   <input
                     required
                     type="tel"
-                    placeholder="+91 96004 46220"
+                    placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
                     className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500"
@@ -122,6 +122,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                   onChange={(e) => setFormData({...formData, interest: e.target.value})}
                   className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500"
                 >
+                  <option value="">-- Select Service Request --</option>
                   <option value="Oracle ERP Cloud">Oracle ERP Cloud (Financials / SCM)</option>
                   <option value="Oracle HCM Cloud">Oracle HCM Cloud & Payroll</option>
                   <option value="Oracle OIC & Integrations">Oracle OIC & API Middleware</option>
@@ -144,7 +145,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
 
               <div className="p-3 rounded-xl bg-brand-50 border border-brand-100 flex items-center gap-2 text-[11px] text-brand-700 font-medium">
                 <ShieldCheck className="w-4 h-4 text-brand-600 shrink-0" />
-                <span>NDA & Confidentiality Guaranteed. Free Initial Solution Architecture Session.</span>
+                <span>NDA protected. Free initial consultation.</span>
               </div>
 
               <div className="flex items-center justify-end gap-3 pt-2">

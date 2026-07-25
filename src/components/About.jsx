@@ -7,27 +7,27 @@ const About = () => {
     {
       icon: MapPin,
       title: "Chennai Headquarters",
-      description: "Based in Chennai, Tamil Nadu, equipped to serve organizations with flexible onshore and offshore delivery models.",
+      description: "Based in Chennai, ready to serve with flexible onshore and offshore delivery.",
     },
     {
       icon: Award,
       title: "Oracle IT Specialists",
-      description: "Deep domain authority in Oracle Cloud ERP, HCM, SCM, Financials, Integrations, and Analytics implementations.",
+      description: "Oracle Cloud ERP, HCM, SCM, Financials, integrations, and analytics expertise.",
     },
     {
       icon: Users,
       title: "Client-Centric Approach",
-      description: "Agile delivery methodologies engineered to reduce total cost of ownership and accelerate time-to-value.",
+      description: "Agile delivery that reduces cost and speeds time-to-value.",
     },
     {
       icon: Target,
       title: "Digital Transformation",
-      description: "Helping legacy enterprises modernize through cloud computing, automated workflows, and robust API frameworks.",
+      description: "Modernizing legacy enterprises with cloud workflows and APIs.",
     },
   ];
 
   return (
-    <section id="about" className="py-24 relative bg-white overflow-hidden">
+    <section id="about" className="py-16 relative bg-white overflow-hidden">
       
       {/* Decorative Orbs */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-50 rounded-full blur-3xl -z-10 pointer-events-none" />
@@ -44,7 +44,7 @@ const About = () => {
             About <span className="bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">Vignarva Solutions</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            Innovating Business Through Technology — Delivering high-value Oracle ERP implementation, custom software development, and digital transformation for modern enterprises.
+            Oracle ERP, software, and digital transformation for modern enterprises.
           </p>
         </div>
 
@@ -67,10 +67,7 @@ const About = () => {
                 Empowering Enterprises with Scalable Cloud & Oracle Solutions
               </h3>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                <strong>Vignarva Solutions</strong> is a Chennai-based IT consulting firm specializing in enterprise software engineering, Oracle implementation, ERP consulting, cloud migration, digital transformation, application development, and 24x7 managed IT services.
-              </p>
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                We combine deep technical mastery of Oracle Cloud Ecosystems with modern web/mobile application stacks to empower organizations to streamline business operations, reduce operational bottlenecks, and achieve digital agility.
+                <strong>Vignarva Solutions</strong> is a Chennai IT firm focused on Oracle implementation, cloud migration, application development, and managed services.
               </p>
 
               <div className="pt-4 border-t border-slate-200/70 grid grid-cols-2 gap-4">
