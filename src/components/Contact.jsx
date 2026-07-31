@@ -11,25 +11,60 @@ const Contact = () => {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-    }, 4000);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: `Contact Inquiry: ${formData.subject || 'General'}`,
+          message: formData.message,
+          from_name: formData.name
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        }, 5000);
+      } else {
+        setSubmitError(result.message || "Failed to submit. Please verify the Web3Forms Access Key.");
+      }
+    } catch (error) {
+      setSubmitError("Network error. Please check your internet connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-white via-slate-50 to-brand-50/50 relative overflow-hidden">
-      
+
       {/* Decorative Orbs */}
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-brand-100/40 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-100/40 rounded-full blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-brand-50 text-brand-600 border border-brand-200 uppercase tracking-wider">
@@ -44,9 +79,9 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-12 gap-10">
-          
+
           {/* Left Column: Contact Cards & Info */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-5 space-y-6"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -54,7 +89,7 @@ const Contact = () => {
           >
             {/* Contact Info Cards */}
             <div className="glass-card p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-soft-lg space-y-6 bg-white">
-              
+
               <h3 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">
                 Contact Information
               </h3>
@@ -107,14 +142,10 @@ const Contact = () => {
                 </div>
                 <div className="text-xs text-white/80 flex justify-between">
                   <span>Monday – Friday:</span>
-                  <span className="font-semibold text-white">9:00 AM – 6:00 PM IST</span>
+                  <span className="font-semibold text-white">9:30 AM – 5:30 PM IST</span>
                 </div>
                 <div className="text-xs text-white/80 flex justify-between">
-                  <span>Saturday:</span>
-                  <span className="font-semibold text-white">9:00 AM – 2:00 PM IST</span>
-                </div>
-                <div className="text-xs text-white/80 flex justify-between">
-                  <span>Sunday:</span>
+                  <span>Saturday & Sunday:</span>
                   <span className="font-semibold text-brand-200">Closed</span>
                 </div>
               </div>
@@ -122,31 +153,36 @@ const Contact = () => {
             </div>
 
             {/* Simulated Interactive Location Map Card */}
-            <div className="glass-card p-4 rounded-3xl border border-slate-200/80 bg-white relative overflow-hidden h-48 flex items-center justify-center group">
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-brand-50 to-accent-50 opacity-90" />
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=Flat+104,+Osborne,+Hiranandani+Parks,+Vadakkupattu,+Oragadam,+Chennai+-+603204"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card p-4 rounded-3xl border border-slate-200/80 bg-white relative overflow-hidden h-48 flex items-center justify-center group block hover:shadow-lg hover:border-brand-300 transition-all duration-300 cursor-pointer"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-brand-50 to-accent-50 opacity-90 group-hover:opacity-85 transition-opacity" />
               <div className="relative z-10 text-center space-y-2 p-4">
-                <div className="w-10 h-10 rounded-full bg-brand-600 text-white mx-auto flex items-center justify-center shadow-lg animate-bounce">
+                <div className="w-10 h-10 rounded-full bg-brand-600 text-white mx-auto flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
                   <MapPin className="w-5 h-5" />
                 </div>
-                <div className="text-sm font-bold text-slate-900">Vignarva Solutions Center</div>
+                <div className="text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">Vignarva Solutions Center</div>
                 <div className="text-xs text-slate-600">Chennai, Tamil Nadu, India</div>
-                <span className="inline-block px-3 py-1 bg-white text-brand-600 text-[10px] font-extrabold rounded-full shadow-xs border border-brand-200">
-                  Google Map Verification Ready
+                <span className="inline-block px-3 py-1 bg-white text-brand-600 text-[10px] font-extrabold rounded-full shadow-xs border border-brand-200 group-hover:bg-brand-50 transition-colors">
+                  Open Google Maps
                 </span>
               </div>
-            </div>
+            </a>
 
           </motion.div>
 
           {/* Right Column: Contact Form */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-7"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
             <div className="glass-card p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-soft-lg bg-white relative">
-              
+
               <h3 className="text-2xl font-extrabold text-slate-900 mb-2">
                 Send Us a Message
               </h3>
@@ -175,7 +211,7 @@ const Contact = () => {
                         required
                         type="text"
                         value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Ex. Jon"
                         className="w-full px-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all"
                       />
@@ -186,7 +222,7 @@ const Contact = () => {
                         required
                         type="email"
                         value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="jon@gmail.com"
                         className="w-full px-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all"
                       />
@@ -200,7 +236,7 @@ const Contact = () => {
                         required
                         type="tel"
                         value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 98765 43210"
                         className="w-full px-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all"
                       />
@@ -209,7 +245,7 @@ const Contact = () => {
                       <label className="block text-xs font-bold text-slate-700 mb-1">Service Request <span className="text-red-500">*</span></label>
                       <select
                         value={formData.subject}
-                        onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                         className="w-full px-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all"
                       >
                         <option value="">-- Select Service Request --</option>
@@ -229,17 +265,24 @@ const Contact = () => {
                       required
                       rows={4}
                       value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Please outline your project scope, requirements, or desired Oracle modules..."
                       className="w-full px-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all"
                     />
                   </div>
 
+                  {submitError && (
+                    <div className="p-4 text-xs font-semibold text-red-800 bg-red-50 border border-red-200 rounded-xl">
+                      {submitError}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full py-4 text-base font-bold text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 rounded-xl shadow-lg shadow-brand-500/25 hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
+                    className={`w-full py-4 text-base font-bold text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 rounded-xl shadow-lg shadow-brand-500/25 hover:shadow-xl transition-all flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                   >
-                    Submit Inquiry <Send className="w-4 h-4" />
+                    {isSubmitting ? 'Sending...' : 'Submit Inquiry'} <Send className="w-4 h-4 animate-pulse" />
                   </button>
                 </form>
               )}

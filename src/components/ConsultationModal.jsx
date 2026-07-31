@@ -13,15 +13,59 @@ const ConsultationModal = ({ isOpen, onClose }) => {
     notes: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      onClose();
-    }, 2500);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: `Consultation Request: ${formData.interest || 'General'}`,
+          message: `Company: ${formData.company || 'Not Specified'}\nNotes: ${formData.notes || 'None'}`,
+          from_name: formData.name
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            interest: '',
+            notes: ''
+          });
+          onClose();
+        }, 3000);
+      } else {
+        setSubmitError(result.message || "Failed to request. Please check access key.");
+      }
+    } catch (error) {
+      setSubmitError("Network error. Please check connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -148,6 +192,12 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                 <span>NDA protected. Free initial consultation.</span>
               </div>
 
+               {submitError && (
+                 <div className="p-3 text-[11px] font-semibold text-red-800 bg-red-50 border border-red-200 rounded-xl">
+                   {submitError}
+                 </div>
+               )}
+
               <div className="flex items-center justify-end gap-3 pt-2">
                 <button
                   type="button"
@@ -158,9 +208,10 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 rounded-xl shadow-md flex items-center gap-1.5"
+                  disabled={isSubmitting}
+                  className={`px-6 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 rounded-xl shadow-md flex items-center gap-1.5 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
-                  Request Call <Send className="w-3.5 h-3.5" />
+                  {isSubmitting ? 'Requesting...' : 'Request Call'} <Send className="w-3.5 h-3.5 animate-pulse" />
                 </button>
               </div>
             </form>
