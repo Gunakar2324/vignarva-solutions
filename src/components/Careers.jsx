@@ -44,14 +44,43 @@ const jobOpenings = [
 const Careers = () => {
   const [selectedJob, setSelectedJob] = useState(null);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setSelectedJob(null);
-    }, 2500);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
+    const formDataObj = new FormData(e.target);
+
+    // Append Web3Forms access key and subject metadata
+    formDataObj.append("access_key", accessKey);
+    formDataObj.append("subject", `Career Application: ${selectedJob?.title || 'General'}`);
+    formDataObj.append("job_title", selectedJob?.title || 'Not Specified');
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataObj
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setSelectedJob(null);
+        }, 4000);
+      } else {
+        setSubmitError(result.message || "Failed to submit application. Please try again.");
+      }
+    } catch (error) {
+      setSubmitError("Network error. Please check connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -161,6 +190,7 @@ const Careers = () => {
                     <input
                       required
                       type="text"
+                      name="name"
                       placeholder="e.g. Vignesh Kumar"
                       className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500"
                     />
@@ -172,6 +202,7 @@ const Careers = () => {
                       <input
                         required
                         type="email"
+                        name="email"
                         placeholder="you@email.com"
                         className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500"
                       />
@@ -181,6 +212,7 @@ const Careers = () => {
                       <input
                         required
                         type="tel"
+                        name="phone"
                         placeholder="+91 98765 43210"
                         className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500"
                       />
@@ -191,11 +223,18 @@ const Careers = () => {
                     <label className="block text-xs font-bold text-slate-700 mb-1">Experience / Tech Summary</label>
                     <textarea
                       rows={3}
+                      name="message"
                       placeholder="Briefly describe your experience with Oracle / Software Development..."
                       className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500"
                     />
                   </div>
                 </div>
+
+                {submitError && (
+                  <div className="p-3 text-[11px] font-semibold text-red-800 bg-red-50 border border-red-200 rounded-xl">
+                    {submitError}
+                  </div>
+                )}
 
                 <div className="flex items-center justify-end gap-3 pt-2">
                   <button
@@ -207,9 +246,10 @@ const Careers = () => {
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-2.5 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-xl shadow-md flex items-center gap-1.5"
+                    disabled={isSubmitting}
+                    className={`px-5 py-2.5 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-xl shadow-md flex items-center gap-1.5 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                   >
-                    Submit Application <Send className="w-3.5 h-3.5" />
+                    {isSubmitting ? 'Submitting...' : 'Submit Application'} <Send className="w-3.5 h-3.5 animate-pulse" />
                   </button>
                 </div>
               </form>
