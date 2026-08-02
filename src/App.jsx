@@ -24,11 +24,19 @@ function App() {
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-brand-500 selection:text-white flex flex-col font-sans">
       
+      {/* Skip to Content — Accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-bold focus:shadow-lg"
+      >
+        Skip to main content
+      </a>
+
       {/* Sticky Glass Navbar */}
       <Navbar onOpenConsultation={handleOpenConsultation} />
 
       {/* Main Content Sections */}
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         <Hero onOpenConsultation={handleOpenConsultation} />
         <About />
         <OracleSolutionsExplorer onOpenConsultation={handleOpenConsultation} />

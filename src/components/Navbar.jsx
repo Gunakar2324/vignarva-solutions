@@ -72,7 +72,7 @@ const Navbar = ({ onOpenConsultation }) => {
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/80 px-4 py-1.5 rounded-full border border-slate-200/80 shadow-sm backdrop-blur-sm">
+          <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-1 bg-white/80 px-4 py-1.5 rounded-full border border-slate-200/80 shadow-sm backdrop-blur-sm">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -112,7 +112,9 @@ const Navbar = ({ onOpenConsultation }) => {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl text-slate-600 hover:text-brand-600 hover:bg-white/80 focus:outline-none border border-slate-200/60"
-              aria-label="Toggle menu"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -131,7 +133,7 @@ const Navbar = ({ onOpenConsultation }) => {
             transition={{ duration: 0.25 }}
             className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 overflow-hidden shadow-xl"
           >
-            <div className="max-w-7xl mx-auto px-4 py-6 space-y-3">
+            <nav id="mobile-navigation" aria-label="Mobile navigation" className="max-w-7xl mx-auto px-4 py-6 space-y-3">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -165,7 +167,7 @@ const Navbar = ({ onOpenConsultation }) => {
                   Get Started <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>

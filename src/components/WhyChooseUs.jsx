@@ -47,7 +47,7 @@ const whyCards = [
 
 const WhyChooseUs = () => {
   return (
-    <section id="why-us" className="py-16 bg-gradient-to-b from-brand-50/50 via-white to-slate-50 relative overflow-hidden">
+    <section id="why-us" aria-labelledby="whychooseus-heading" className="py-16 bg-gradient-to-b from-brand-50/50 via-white to-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
           <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-white text-brand-600 border border-brand-200 uppercase tracking-wider">
             Our Key Differentiators
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 id="whychooseus-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Why Choose <span className="bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">Vignarva Solutions</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">

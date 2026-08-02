@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles, CheckCircle2, Database, ShieldCheck, Cloud, Cpu, 
 
 const Hero = ({ onOpenConsultation }) => {
   return (
-    <section id="home" className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-mesh-pattern">
+    <section id="home" aria-labelledby="hero-heading" className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-mesh-pattern">
       
       {/* Background Soft Gradient Orbs & Shapes */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-brand-300/30 via-accent-300/20 to-indigo-300/20 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-subtle" />
@@ -31,7 +31,7 @@ const Hero = ({ onOpenConsultation }) => {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
               Transforming Businesses with <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 bg-clip-text text-transparent">
                 Innovative IT Solutions

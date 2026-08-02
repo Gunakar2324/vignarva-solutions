@@ -17,7 +17,7 @@ const industryList = [
 
 const Industries = () => {
   return (
-    <section id="industries" className="py-16 bg-white relative overflow-hidden">
+    <section id="industries" aria-labelledby="industries-heading" className="py-16 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -25,7 +25,7 @@ const Industries = () => {
           <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-brand-50 text-brand-600 border border-brand-200 uppercase tracking-wider">
             Sector Expertise
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 id="industries-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Industries We <span className="bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">Serve</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">

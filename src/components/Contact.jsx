@@ -57,7 +57,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-white via-slate-50 to-brand-50/50 relative overflow-hidden">
+    <section id="contact" aria-labelledby="contact-heading" className="py-20 bg-gradient-to-b from-white via-slate-50 to-brand-50/50 relative overflow-hidden">
 
       {/* Decorative Orbs */}
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-brand-100/40 rounded-full blur-3xl -z-10" />
@@ -70,7 +70,7 @@ const Contact = () => {
           <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-brand-50 text-brand-600 border border-brand-200 uppercase tracking-wider">
             Contact & Consultation
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 id="contact-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Get In <span className="bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">Touch</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">

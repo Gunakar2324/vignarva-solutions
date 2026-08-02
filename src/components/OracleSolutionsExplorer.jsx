@@ -122,7 +122,7 @@ const OracleSolutionsExplorer = ({ onOpenConsultation }) => {
   const closeMoreInfo = () => setShowMoreInfo(false);
 
   return (
-    <section id="oracle-solutions" className="py-20 bg-gradient-to-b from-brand-50/60 via-white to-slate-50 relative overflow-hidden">
+    <section id="oracle-solutions" aria-labelledby="oracle-solutions-heading" className="py-20 bg-gradient-to-b from-brand-50/60 via-white to-slate-50 relative overflow-hidden">
       
       {/* Background Accent Gradients */}
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-brand-200/30 rounded-full blur-3xl pointer-events-none -z-10" />
@@ -136,7 +136,7 @@ const OracleSolutionsExplorer = ({ onOpenConsultation }) => {
             <Sparkles className="w-4 h-4 text-brand-600" />
             <span>Featured Core Competency</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 id="oracle-solutions-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Oracle IT <span className="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 bg-clip-text text-transparent">Solutions</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">

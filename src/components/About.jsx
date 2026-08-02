@@ -27,7 +27,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-16 relative bg-white overflow-hidden">
+    <section id="about" aria-labelledby="about-heading" className="py-16 relative bg-white overflow-hidden">
       
       {/* Decorative Orbs */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-50 rounded-full blur-3xl -z-10 pointer-events-none" />
@@ -40,7 +40,7 @@ const About = () => {
           <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-brand-50 text-brand-600 border border-brand-200 uppercase tracking-wider inline-flex items-center gap-1.5">
             <Compass className="w-3.5 h-3.5" /> Corporate Overview
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 id="about-heading" className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             About <span className="bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">Vignarva Solutions</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">

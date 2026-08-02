@@ -24,6 +24,9 @@ const Footer = () => {
               <img 
                 src="logo-dark-bg.png" 
                 alt="Vignarva Solutions Logo" 
+                width="80"
+                height="80"
+                loading="lazy"
                 className="h-14 sm:h-16 md:h-20 w-auto object-contain rounded-xl shadow-lg border border-slate-800"
               />
               <div className="flex flex-col">
@@ -57,7 +60,7 @@ const Footer = () => {
           </div>
 
           {/* Col 2: Quick Links */}
-          <div>
+          <nav aria-label="Company links">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-brand-500 pl-2">
               Company
             </h4>
@@ -69,10 +72,10 @@ const Footer = () => {
               <li><a href="#industries" className="hover:text-brand-400 transition-colors">Industries</a></li>
               <li><a href="#contact" className="hover:text-brand-400 transition-colors">Contact</a></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Col 3: IT Services */}
-          <div>
+          <nav aria-label="Services links">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-brand-500 pl-2">
               Services
             </h4>
@@ -85,10 +88,10 @@ const Footer = () => {
               <li><a href="#services" className="hover:text-brand-400 transition-colors">Cloud & DevOps</a></li>
               <li><a href="#services" className="hover:text-brand-400 transition-colors">API Integration</a></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Col 4: Oracle Specialization */}
-          <div>
+          <nav aria-label="Oracle specialization links">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-brand-500 pl-2">
               Oracle Specialization
             </h4>
@@ -100,7 +103,7 @@ const Footer = () => {
               <li><a href="#oracle-solutions" className="hover:text-brand-400 transition-colors">OIC Integration</a></li>
               <li><a href="#oracle-solutions" className="hover:text-brand-400 transition-colors">OTBI & Analytics Cloud</a></li>
             </ul>
-          </div>
+          </nav>
 
         </div>
 
