@@ -222,6 +222,37 @@ const OracleSolutionsExplorer = ({ onOpenConsultation }) => {
                   </button>
                 </div>
               </div>
+
+              {/* Right Column: Modules Grid — Desktop Only */}
+              <div className="hidden lg:block lg:col-span-7 space-y-6">
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-brand-50/30 border border-slate-200/70">
+                  <div className="flex items-center gap-2 mb-5">
+                    <Layers className="w-4 h-4 text-brand-600" />
+                    <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">Supported Modules</h4>
+                  </div>
+                  <div className="flex flex-wrap gap-2.5">
+                    {currentData.modules.map((moduleName, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3.5 py-2 text-xs font-semibold rounded-xl bg-white text-slate-700 border border-slate-200 shadow-xs hover:border-brand-300 hover:text-brand-700 hover:bg-brand-50/50 transition-all duration-200 cursor-default"
+                      >
+                        {moduleName}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Trust Badge */}
+                <div className="flex items-center gap-3 p-5 rounded-2xl bg-white border border-slate-200/70 shadow-xs">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-slate-900">Enterprise-Grade Implementation</p>
+                    <p className="text-xs text-slate-500 mt-0.5">Certified Oracle specialists with proven deployment methodology</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </AnimatePresence>
